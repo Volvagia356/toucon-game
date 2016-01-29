@@ -63,11 +63,23 @@ function showMap(map_id) {
     $('#' + map_id).show();
 }
 
+function toggleBGM() {
+    var bgm = $('#bgm')[0];
+    var bgm_btn = $('#bgm-btn');
+    if (bgm.paused) {
+        bgm.play();
+        bgm_btn.text("Pause BGM");
+    } else {
+        bgm.pause();
+        bgm_btn.text("Play BGM");
+    }
+}
 
 $(function() {
     generateMaps();
     fillMapList();
     $('#close-button').click(hideModal)
     $('#show-answer').click(toggleAnswer);
+    $('#bgm-btn').click(toggleBGM);
     showMap(map_order[0]);
 });

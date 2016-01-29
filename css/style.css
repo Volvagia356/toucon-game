@@ -75,6 +75,14 @@ body {
     cursor: pointer;
 }
 
+#bgm-btn {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    margin: 20px;
+    z-index: -1;
+}
+
 .map {
     width: 959px;
     height: 580px;
