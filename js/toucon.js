@@ -39,7 +39,7 @@ function fillMapList() {
 }
 
 function showModal() {
-    var elem = $(this)
+    var elem = $(this);
     var map_id = elem.data('map');
     var node_id = elem.data('node');
     var question = questions[map_id][node_id];
@@ -78,7 +78,7 @@ function toggleBGM() {
 $(function() {
     generateMaps();
     fillMapList();
-    $('#close-button').click(hideModal)
+    $('#close-button').click(hideModal);
     $('#show-answer').click(toggleAnswer);
     $('#bgm-btn').click(toggleBGM);
     showMap(map_order[0]);
