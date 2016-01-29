@@ -9,7 +9,7 @@ remaining_questions = csv.DictWriter(open("remaining.csv", 'w'), ('question', 'a
 
 mapinfo = OrderedDict()
 mapinfo['6-4B'] = {
-        'end_node': 'M',
+        'end_node': 'L',
         'boss_node': 'L',
         'boss_question': 17,
         }
