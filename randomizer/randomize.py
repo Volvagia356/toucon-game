@@ -25,7 +25,6 @@ for current_map in mapinfo:
     boss_question = mapinfo[current_map]['boss_question']-1
     randomized_questions[boss_question] = EMPTY_QUESTION
 randomized_questions = [question for question in randomized_questions if question != EMPTY_QUESTION]
-random.shuffle(randomized_questions)
 
 maps = {}
 for map_name, current_map in mapinfo.items():
@@ -36,7 +35,9 @@ for map_name, current_map in mapinfo.items():
         if node['node'] == current_map['boss_node']:
             current_node.update(questions[current_map['boss_question']-1])
         else:
-            current_node.update(randomized_questions.pop())
+            random_question = random.choice(randomized_questions)
+            current_node.update(random_question)
+            randomized_questions.remove(random_question)
         map_questions[node['node']] = current_node
         if node['node'] == current_map['end_node']:
             break
